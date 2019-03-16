@@ -14,8 +14,7 @@ class FullyConnectedLayer:
 		# Initializes the Weights and Biases using a Normal Distribution with Mean 0 and Standard Deviation 0.1
 		self.weights = np.random.normal(0,0.1,(in_nodes, out_nodes))	
 		self.biases = np.random.normal(0,0.1, (1, out_nodes))
-		###############################################
-		# NOTE: You must NOT change the above code but you can add extra variables if necessary 
+		
 
 	def forwardpass(self, X):
 		
@@ -29,8 +28,7 @@ class FullyConnectedLayer:
 		# INPUT activation matrix  		:[n X self.in_nodes]
 		# OUTPUT activation matrix		:[n X self.out_nodes]
 
-		###############################################
-		# TASK 1 - YOUR CODE HERE
+		
 		fin_out = np.zeros((n,self.out_nodes))
 		for i in range(n):
 			op = np.matmul(X[i], self.weights) + self.biases
@@ -42,7 +40,7 @@ class FullyConnectedLayer:
 		
 			
 
-		###############################################
+		
 		
 	def backwardpass(self, lr, activation_prev, delta):
 		# Input
@@ -55,8 +53,7 @@ class FullyConnectedLayer:
 		# Update self.weights and self.biases for this layer by backpropagation
 		n = activation_prev.shape[0] # batch size
 
-		###############################################
-		# TASK 2 - YOUR CODE HERE
+		
 		
 		new_delta = np.matmul( delta * derivative_sigmoid(self.data) , np.transpose(self.weights))
 		del_w = np.matmul(np.transpose(activation_prev), delta * derivative_sigmoid(self.data)) 
@@ -98,8 +95,7 @@ class ConvolutionLayer:
 		# INPUT activation matrix  		:[n X self.in_depth X self.in_row X self.in_col]
 		# OUTPUT activation matrix		:[n X self.out_depth X self.out_row X self.out_col]
 
-		###############################################
-		# TASK 1 - YOUR CODE HERE
+		
 		dep = self.out_depth
 		row = self.out_row
 		col  = self.out_col
@@ -129,9 +125,8 @@ class ConvolutionLayer:
 		# Update self.weights and self.biases for this layer by backpropagation
 		n = activation_prev.shape[0] # batch size
 
-		###############################################
-		# TASK 2 - YOUR CODE HERE
-		raise NotImplementedError
+		
+		
 		###############################################
 	
 class AvgPoolingLayer:
@@ -162,8 +157,7 @@ class AvgPoolingLayer:
 		# INPUT activation matrix  		:[n X self.in_depth X self.in_row X self.in_col]
 		# OUTPUT activation matrix		:[n X self.out_depth X self.out_row X self.out_col]
 
-		###############################################
-		# TASK 1 - YOUR CODE HERE
+		
 		dep = self.out_depth
 		row = self.out_row
 		col  = self.out_col
@@ -194,8 +188,7 @@ class AvgPoolingLayer:
 		
 		n = activation_prev.shape[0] # batch size
 
-		###############################################
-		# TASK 2 - YOUR CODE HERE
+		
 		raise NotImplementedError
 		###############################################
 
