@@ -20,8 +20,7 @@ def taskSquare(draw):
 	# nn1 = nn.NeuralNetwork(out_nodes, alpha, batchSize, epochs)	
 	# Add layers to neural network corresponding to inputs and outputs of given data
 	# Eg. nn1.addLayer(FullyConnectedLayer(x,y))
-	###############################################
-	# TASK 2.1 - YOUR CODE HERE
+	
 	out_nodes = 2
 	alpha = 0.1
 	batchSize = 4
@@ -46,8 +45,7 @@ def taskSemiCircle(draw):
 	# nn1 = nn.NeuralNetwork(out_nodes, alpha, batchSize, epochs)	
 	# Add layers to neural network corresponding to inputs and outputs of given data
 	# Eg. nn1.addLayer(FullyConnectedLayer(x,y))
-	###############################################
-	# TASK 2.2 - YOUR CODE HERE
+	
 	out_nodes = 2
 	alpha = 0.1
 	batchSize = 4
@@ -56,7 +54,7 @@ def taskSemiCircle(draw):
 	nn1.addLayer(FullyConnectedLayer(XTrain.shape[1], 10))
 	nn1.addLayer(FullyConnectedLayer(10, out_nodes))
 	
-	###############################################
+	
 	nn1.train(XTrain, YTrain, XVal, YVal, False, True)
 	pred, acc  = nn1.validate(XTest, YTest)
 	print('Test Accuracy ',acc)
@@ -72,8 +70,7 @@ def taskMnist():
 	# nn1 = nn.NeuralNetwork(out_nodes, alpha, batchSize, epochs)	
 	# Add layers to neural network corresponding to inputs and outputs of given data
 	# Eg. nn1.addLayer(FullyConnectedLayer(x,y))
-	###############################################
-	# TASK 2.3 - YOUR CODE HERE
+	
 	out_nodes = 10
 	alpha = 0.1
 	batchSize = 20
@@ -102,9 +99,7 @@ def taskCifar10():
 	# # nn1 = nn.NeuralNetwork(out_nodes, alpha, batchSize, epochs)	
 	# # Add layers to neural network corresponding to inputs and outputs of given data
 	# # Eg. nn1.addLayer(FullyConnectedLayer(x,y))
-	# ###############################################
-	# # TASK 2.4 - YOUR CODE HERE
-	raise NotImplementedError	
+	
 	###################################################
 	# return nn1,  XTest, YTest, modelName # UNCOMMENT THIS LINE WHILE SUBMISSION
 
